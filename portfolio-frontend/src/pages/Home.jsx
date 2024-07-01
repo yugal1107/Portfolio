@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Projects from "../components/Projects";
 import About from "../components/About";
 import App from "../components/ParticlesBackground";
+import Contact from "../components/Contact";
 // import Menu from "../assets/menu.svg";
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
       <App />
       <About />
       <Projects />
+      <Contact />
     </div>
   );
 }

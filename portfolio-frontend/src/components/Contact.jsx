@@ -1,11 +1,18 @@
 import React from "react";
+import TextAnimation from "./TextAnimation";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-10 bg-gray-100">
+    <section id="contact" className="py-10">
       <div className="container mx-auto text-center">
-        <h2 className="text-2xl font-bold mb-5">Contact Me</h2>
-        <p className="text-gray-700 mb-5">
+        <TextAnimation text="Contact Me" />
+        <div className="logos flex justify-around gap-2 overflow-hidden">
+          <img className="h-16 border-1 bg-slate-200 rounded-full" src="/linkedin.png" alt=""></img>
+          <img className="h-16 border-1 bg-slate-200 rounded-full" src="/github.png" alt=""></img>
+          <img className="h-16 border-1" src="/gmail.png" alt=""></img>
+          <img className="h-16 border-1 bg-slate-200 rounded-full" src="/twitter.png" alt=""></img>
+        </div>
+        <p className="text-gray-300 mb-5">
           Feel free to reach out to me via email at example@example.com or
           through my social media channels.
         </p>
