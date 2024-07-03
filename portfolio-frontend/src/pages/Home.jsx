@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import Projects from "../components/Projects";
-import About from "../components/About";
+import Introduction from "../components/Introduction";
 import App from "../components/ParticlesBackground";
 import Contact from "../components/Contact";
+import About from "../components/About";
 // import Menu from "../assets/menu.svg";
 
 function Home() {
@@ -10,8 +11,9 @@ function Home() {
   return (
     <div id="particles-js" className="">
       <App />
-      <About />
+      <Introduction />
       <Projects />
+      <About />
       <Contact />
     </div>
   );

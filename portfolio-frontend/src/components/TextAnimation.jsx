@@ -31,8 +31,8 @@ const TextAnimation = (props) => {
 
   return (
     <h2 className="ml9 mb-5">
-      <span className="text-wrapper">
-        <span className="letters text-5xl text-yellow-300 font-normal">
+      <span className="text-wrapper xl:pb-4">
+        <span className="letters text-5xl text-yellow-300 font-normal xl:text-6xl">
           {props.text}
         </span>
       </span>
