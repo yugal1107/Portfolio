@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="text-white justify-between align-middle px-4 py-6 border-b-2 border-gray-400  bg-black max-w-full overflow-x-hidden">
+      <nav className="text-white justify-between align-middle px-4 py-6  bg-black max-w-full overflow-x-hidden">
         <div className="flex justify-between">
           <div className="text-3xl font-extralight">
             <span className="text-red-500">Y</span>ugal{" "}

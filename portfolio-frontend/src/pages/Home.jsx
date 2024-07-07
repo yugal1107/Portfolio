@@ -9,8 +9,8 @@ import About from "../components/About";
 function Home() {
 
   return (
-    <div id="particles-js" className="">
-      <App />
+    <div id="particles-js" className="bg-black">
+      {/* <App /> */}
       <Introduction />
       <Projects />
       <About />

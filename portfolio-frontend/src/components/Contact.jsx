@@ -1,9 +1,6 @@
 import React from "react";
 import TextAnimation from "./TextAnimation";
-import Mail from "../icons/Mail";
-import Github from "../icons/github";
-import Twitter from "../icons/twitter";
-import Linkedin from "../icons/linkedin";
+import { SiMaildotru, SiGithub, SiX, SiLinkedin } from "react-icons/si";
 
 const Contact = () => {
   return (
@@ -12,33 +9,35 @@ const Contact = () => {
         <div>
           <TextAnimation text="Contact Me" />
         </div>
-        <div className="left-container flex flex-col px-6">
-          <div className="text-gray-300 md:text-md  xl:text-xl">
+        <div className="left-container flex flex-col px-6 items-start justify-center">
+          <div className="text-gray-300 md:text-md xl:text-xl  text-left ">
             Feel free to reach out to me via email at yugal1107@gmail.com or
             through my social media channels.
           </div>
           <a
             href="mailto:yugal1107@gmail.com"
-            className="flex gap-4 align-middle py-4"
+            className="flex gap-4 align-middle my-4"
           >
-            <Mail height="24px" width="24px" fill="red" />
-            <div className="text-red-500">yugal1107@gmail.com</div>
+            <SiMaildotru className="text-red-600 text-xl md:text-2xl mt-1" />
+            <div className="text-red-500 md:text-md xl:text-xl">
+              yugal1107@gmail.com
+            </div>
           </a>
 
           <div className=" logos flex gap-10 overflow-hidden py-4">
             <a href="http://github.com/yugal1107">
-              <Github height="30px" width="30px" fill="red" />
+              <SiGithub className="text-red-600 md:text-l xl:text-3xl" />
             </a>
             <a href="https://x.com/YugalBurde">
-              <Twitter height="30px" width="30px" fill="red" />
+              <SiX className="text-red-600 md:text-l xl:text-3xl"/>
             </a>
             <a href="https://www.linkedin.com/in/yugal-burde-58012a256/">
-              <Linkedin height="30px" width="30px" fill="red" />
+              <SiLinkedin className="text-red-600 md:text-l xl:text-3xl"/>
             </a>
           </div>
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-4 xl:mx-4 xl:my-2">
           <div>
             <input
               type="text"

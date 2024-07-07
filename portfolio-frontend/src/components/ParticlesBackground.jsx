@@ -81,7 +81,7 @@ const App = () => {
           density: {
             enable: true,
           },
-          value: 150,
+          value: 70,
         },
         opacity: {
           value: 0.5,
@@ -90,7 +90,7 @@ const App = () => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: 2 },
         },
       },
       detectRetina: true,
