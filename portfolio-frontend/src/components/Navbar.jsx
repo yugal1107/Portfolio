@@ -11,13 +11,14 @@ function Navbar() {
 
   return (
     <>
-      <nav className="text-white justify-between align-middle px-4 py-6  bg-black max-w-full overflow-x-hidden">
+      <nav className="text-white justify-between align-middle px-4 py-4 bg-black max-w-full overflow-x-hidden">
         <div className="flex justify-between">
           <div className="text-3xl font-extralight">
             <span className="text-red-500">Y</span>ugal{" "}
             <span className="text-red-500">B</span>urde
           </div>
-          <div className="pt-2">
+          {/* <div className="pt-2"> */}
+
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -27,8 +28,8 @@ function Navbar() {
             >
               <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
             </svg> */}
-            {isOpen ? <Close onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />}
-          </div>
+            {/* {isOpen ? <Close onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />} */}
+          {/* </div> */}
         </div>
         <div className={`absolute p-3 left-0 right-0 flex flex-col gap-5 text-xl font-light backdrop-blur-md bg-white/30 ${isOpen ? 'top-20' : '-top-96'}`}>  
           <Link to="">Home</Link>

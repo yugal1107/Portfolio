@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.playwrite-hr-lijeva-tile {
+  font-family: "Playwrite HR Lijeva", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --navbar-height: 4rem; /* Adjust based on your Navbar's height */
+}
+
+.home-first-section {
+  height: calc(100vh - var(--navbar-height));
+  overflow: auto; /* To handle content that might exceed the calculated height */
+}

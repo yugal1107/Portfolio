@@ -4,7 +4,7 @@ function ProjectCard({ project, index }) {
     return (
         <div
               key={index}
-              className="bg-[#333] mx-1 rounded-lg pb-5 shadow-slate-900 shadow-xl hover:shadow-lg transition duration-300 ease-in-out flex flex-col gap-4 items-start" // Changed background color to a dark gray
+              className="bg-slate-950 border border-slate-700 p-1 mx-1 rounded-xl pb-5 shadow-slate-900 shadow-md hover:shadow-2xl hover:border-slate-500 transition duration-300 ease-in-out flex flex-col gap-4 items-start" // Changed background color to a dark gray
             >
               {/* Changed text color to a bright blue-green */}
               <img
