@@ -21,7 +21,7 @@ const Introduction = () => {
     //   </div>
     // </section>
 
-    <section className="md:home-first-section container flex-col pb-10 px-8 text-white justify-around md:flex md:flex-row items-center mx-auto overflow-x-hidden">
+    <section className="home-first-section container flex-col pb-10 px-8 text-white justify-around md:flex md:flex-row items-center mx-auto overflow-x-hidden">
       <div className="basis-1/2 content-center">
         <div className="px-6 lg:px-16 xl:px-28">
           <img className="w-auto p-6 grow rounded-full" src={profile}></img>
@@ -43,9 +43,7 @@ const Introduction = () => {
           I am a passionate developer with experience in creating dynamic and
           responsive web applications. I am currently pursuing by B.Tech in MITS
           Gwalior with current CGPA of 8.5. My expertise includes MERN stack, API handling and progamming languages including Jvaascript, Python and C++. I likes to know about new technologies
-          and always eager to learn new things about technology. I am looking
-          for opportunities to work on challenging projects and grow as a
-          developer.
+          and always eager to learn new things about technology.
         </div>
         <div className="w-full flex justify-around">
           <button
