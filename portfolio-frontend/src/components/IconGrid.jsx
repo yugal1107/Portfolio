@@ -13,18 +13,18 @@ import { SiExpress, SiPostman, SiCplusplus , SiTailwindcss  , SiDocker} from "re
 const IconGrid = () => {
   return (
     <div className="flex flex-wrap gap-4 pt-7 md:gap-7 xl:gap-10">
-      <DiReact className="text-cyan-500 text-7xl md:text-9xl" />
-      <DiPython className="text-yellow-400 text-7xl md:text-9xl" />
-      <DiMongodb className="text-green-500 text-7xl md:text-9xl" />
-      <DiJavascript1 className="text-yellow-300 text-7xl md:text-9xl"/>
-      <DiNodejs className="text-green-600 text-7xl md:text-9xl" />
-      <DiDjango className="text-green-800 text-7xl md:text-9xl" />
-      <DiLinux className="text-white text-7xl md:text-9xl" />
-      <SiExpress className="text-yellow-200 text-7xl md:text-9xl" />
-      <SiPostman className="text-orange-500 text-7xl md:text-9xl" />
-      <SiCplusplus className="text-blue-500 text-7xl md:text-9xl" />
-      <SiTailwindcss className="text-cyan-500 text-7xl md:text-9xl" />
-      <SiDocker className="text-cyan-600 text-7xl md:text-9xl" />
+      <DiReact className="text-white hover:text-cyan-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <DiPython className="text-white hover:text-yellow-400 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <DiMongodb className="text-white hover:text-green-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <DiJavascript1 className="text-white hover:text-yellow-300 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900"/>
+      <DiNodejs className="text-white hover:text-green-600 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <DiDjango className="text-white hover:text-green-800 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <DiLinux className="text-white hover:text-white text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiExpress className="text-white hover:text-yellow-200 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiPostman className="text-white hover:text-orange-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiCplusplus className="text-white hover:text-blue-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiTailwindcss className="text-white hover:text-cyan-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiDocker className="text-white hover:text-cyan-600 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
     </div>
   );
 };
