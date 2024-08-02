@@ -4,7 +4,7 @@ import profile from "/profile.jpg";
 const Introduction = () => {
   const handleClick = () => {
     window.open(
-      "/Yugal_s_Resume.pdf",
+      "https://drive.google.com/file/d/1AXkLDyScLQhuAmsQlKfTZhTRWfi3pCZy/view?usp=sharing",
       "_blank"
     );
   };
