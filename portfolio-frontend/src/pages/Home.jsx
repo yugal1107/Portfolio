@@ -4,6 +4,7 @@ import Introduction from "../components/Introduction";
 import App from "../components/ParticlesBackground";
 import Contact from "../components/Contact";
 import About from "../components/About";
+import StoriesComponent from "../components/Stories/component";
 // import Menu from "../assets/menu.svg";
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
       {/* <App /> */}
       <Introduction />
       <Projects />
+      <StoriesComponent />
       <About />
       <Contact />
     </div>
