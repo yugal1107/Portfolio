@@ -1,12 +1,20 @@
 import React from "react";
 import TextAnimation from "./TextAnimation";
 import IconGrid from "./IconGrid";
+import { TypewriterEffect } from "./ui/typewriter-effect";
 
 const About = () => {
   return (
     <section id="about" className="py-10 ">
       <div className="flex justify-center">
-        <TextAnimation text="My Tech Stack" />
+        {/* <TextAnimation text="My Tech Stack" /> */}
+        <TypewriterEffect
+          words={[
+            { text: "My", className: "dark:text-yellow-300 font-light" },
+            { text: "Tech", className: "dark:text-yellow-300 font-light" },
+            { text: "Stack", className: "dark:text-yellow-300 font-light" },
+          ]}
+        />
       </div>
       <div className="container mx-auto text-center px-4">
         <div className="left-container flex flex-col px-6">
@@ -24,7 +32,7 @@ const About = () => {
             <div className="text-red-500">PostgreSQL</div>
           </div> */}
         </div>
-        <IconGrid />
+        <IconGrid className="mx-4" />
       </div>
     </section>
   );

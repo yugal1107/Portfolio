@@ -1,6 +1,7 @@
 import React from "react";
 import TextAnimation from "./TextAnimation";
 import ProjectCard from "./ProjectCard";
+import { TypewriterEffect } from "./ui/typewriter-effect";
 
 const projects = [
   {
@@ -26,12 +27,17 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-10 ">
+    <section id="projects" className="py-10 px-8 pb-24">
       <div className="container mx-auto text-center">
-        <TextAnimation
+        {/* <TextAnimation
           text="Projects"
           className="text-4xl text-[#66d9ef] font-normal mb-5"
-        />{" "}
+        />{" "} */}
+        <TypewriterEffect
+          words={[
+            { text: "Projects", className: "dark:text-yellow-300 font-light" },
+          ]}
+        />
         {/* Changed text color to a bright blue-green */}
         <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10">
           {projects.map((project, index) => (

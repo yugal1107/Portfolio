@@ -1,13 +1,23 @@
 import React from "react";
 import TextAnimation from "./TextAnimation";
 import { SiMaildotru, SiGithub, SiX, SiLinkedin } from "react-icons/si";
+import {
+  TypewriterEffect,
+  TypewriterEffectSmooth,
+} from "./ui/typewriter-effect";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-10">
+    <section id="contact" className="py-10 px-8">
       <div className="container mx-auto text-center px-4">
-        <div>
-          <TextAnimation text="Contact Me" />
+        <div className="p-2">
+          {/* <TextAnimation text="Contact Me" /> */}
+          <TypewriterEffect
+            words={[
+              { text: "Contact", className: "dark:text-yellow-300 font-light" },
+              { text: "Me", className: "dark:text-yellow-300 font-light" },
+            ]}
+          />
         </div>
         <div className="left-container flex flex-col px-6 items-start justify-center">
           <div className="text-gray-300 md:text-md xl:text-xl  text-left ">
@@ -29,10 +39,10 @@ const Contact = () => {
               <SiGithub className="text-red-600 md:text-l xl:text-3xl" />
             </a>
             <a href="https://x.com/YugalBurde">
-              <SiX className="text-red-600 md:text-l xl:text-3xl"/>
+              <SiX className="text-red-600 md:text-l xl:text-3xl" />
             </a>
             <a href="https://www.linkedin.com/in/yugal-burde-58012a256/">
-              <SiLinkedin className="text-red-600 md:text-l xl:text-3xl"/>
+              <SiLinkedin className="text-red-600 md:text-l xl:text-3xl" />
             </a>
           </div>
         </div>

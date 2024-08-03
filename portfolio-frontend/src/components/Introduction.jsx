@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "/profile.jpg";
+import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 
 const Introduction = () => {
   const handleClick = () => {
@@ -34,7 +35,8 @@ const Introduction = () => {
         <div className="text-4xl xl:text-5xl xl:pt-2 ">
           {" "}
           <span className="text-yellow-300 py-2">I'm</span>{" "}
-          <span className="text-red-500 playwrite-hr-lijeva-tile">Yugal</span> <span className="playwrite-hr-lijeva-tile text-blue-500">Burde</span>{" "}
+          <span className="text-red-500 playwrite-hr-lijeva-tile">Yugal</span>{" "}
+          <span className="playwrite-hr-lijeva-tile text-blue-500">Burde</span>{" "}
         </div>
         <div className="text-md xl:text-xl text-slate-500 xl:pt-1">
           Full Stack Developer
@@ -42,16 +44,19 @@ const Introduction = () => {
         <div className="text-neutral-300 my-4 p-2 border-solid border-yellow-400 border rounded-xl/ xl:text-xl">
           I am a passionate developer with experience in creating dynamic and
           responsive web applications. I am currently pursuing by B.Tech in MITS
-          Gwalior with current CGPA of 8.5. My expertise includes MERN stack, API handling and progamming languages including Jvaascript, Python and C++. I likes to know about new technologies
-          and always eager to learn new things about technology.
+          Gwalior with current CGPA of 8.5. My expertise includes MERN stack,
+          API handling and progamming languages including Jvaascript, Python and
+          C++. I likes to know about new technologies and always eager to learn
+          new things about technology.
         </div>
         <div className="w-full flex justify-around">
-          <button
+          {/* <button
             onClick={handleClick}
             className="bg-yellow-300 text-black p-2 rounded-sm xl:text-xl hover:bg-yellow-400"
           >
             Download Resume
-          </button>
+          </button> */}
+          <HoverBorderGradient onClick={handleClick}>Download Resume</HoverBorderGradient>
         </div>
       </div>
     </section>

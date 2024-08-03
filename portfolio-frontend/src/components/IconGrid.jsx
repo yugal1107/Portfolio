@@ -8,15 +8,23 @@ import {
   DiDjango,
   DiLinux,
 } from "react-icons/di";
-import { SiExpress, SiPostman, SiCplusplus , SiTailwindcss  , SiDocker} from "react-icons/si";
+import {
+  SiExpress,
+  SiPostman,
+  SiCplusplus,
+  SiTailwindcss,
+  SiDocker,
+} from "react-icons/si";
 
-const IconGrid = () => {
+const IconGrid = ({ className }) => {
   return (
-    <div className="flex flex-wrap gap-4 pt-7 md:gap-7 xl:gap-10">
+    <div
+      className={`flex flex-wrap gap-4 pt-7 md:gap-7 xl:gap-10 ${className}`}
+    >
       <DiReact className="text-white hover:text-cyan-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <DiPython className="text-white hover:text-yellow-400 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <DiMongodb className="text-white hover:text-green-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
-      <DiJavascript1 className="text-white hover:text-yellow-300 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900"/>
+      <DiJavascript1 className="text-white hover:text-yellow-300 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <DiNodejs className="text-white hover:text-green-600 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <DiDjango className="text-white hover:text-green-800 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <DiLinux className="text-white hover:text-white text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />

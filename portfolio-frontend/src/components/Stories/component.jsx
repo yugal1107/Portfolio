@@ -1,5 +1,7 @@
 import React from "react";
 import StoryCard from "./StoryCard";
+import { ThreeDCard } from "./ThreeDCard";
+import { TypewriterEffect } from "../ui/typewriter-effect";
 
 const stories = [
   {
@@ -30,18 +32,19 @@ const stories = [
       "https://images.wondershare.com/mockitt/hackathon/ui-ux-hackathon.jpg",
     date: "",
     id: 2,
-    status:"3 months ago"
+    status: "3 months ago",
   },
 ];
 
 export default function StoriesComponent() {
   return (
-    <div className="rounded-3xl">
-      <h1 className="text-5xl font-bold text-center text-white">Stories</h1>
-      <div className="bg-black flex gap-4">
+    <section className="container mx-auto rounded-3xl px-8">
+      {/* <h1 className="text-5xl font-bold text-center text-white">Stories</h1> */}
+      <TypewriterEffect words={[{ text: "Stories", className: "dark:text-yellow-300 font-light" }]} />
+      <div className="bg-black flex gap-4 mx-4">
         {stories.map((story, index) => {
           return (
-            <StoryCard
+            <ThreeDCard
               id={story.id}
               key={story.id}
               title={story.title}
@@ -53,6 +56,6 @@ export default function StoriesComponent() {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
