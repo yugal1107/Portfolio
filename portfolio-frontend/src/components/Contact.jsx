@@ -14,8 +14,8 @@ const Contact = () => {
           {/* <TextAnimation text="Contact Me" /> */}
           <TypewriterEffect
             words={[
-              { text: "Contact", className: "dark:text-yellow-300 font-light" },
-              { text: "Me", className: "dark:text-yellow-300 font-light" },
+              { text: "Contact", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
+              { text: "Me", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
             ]}
           />
         </div>

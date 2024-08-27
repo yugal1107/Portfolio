@@ -10,9 +10,9 @@ const About = () => {
         {/* <TextAnimation text="My Tech Stack" /> */}
         <TypewriterEffect
           words={[
-            { text: "My", className: "dark:text-yellow-300 font-light" },
-            { text: "Tech", className: "dark:text-yellow-300 font-light" },
-            { text: "Stack", className: "dark:text-yellow-300 font-light" },
+            { text: "My", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
+            { text: "Tech", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
+            { text: "Stack", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
           ]}
         />
       </div>

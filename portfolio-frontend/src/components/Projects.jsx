@@ -38,12 +38,12 @@ const Projects = () => {
         />{" "} */}
         <TypewriterEffect
           words={[
-            { text: "Projects", className: "dark:text-yellow-300 font-light" },
+            { text: "Projects", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
           ]}
         />
         {/* Changed text color to a bright blue-green */}
         {/* <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10"> */}
-        <div className="bg-black flex gap-6 overflow-x-scroll">
+        <div className="bg-black flex flex-col lg:flex-row gap-6 overflow-x-scroll">
           {projects.map((project, index) => (
             // <ProjectCard project={project} key={index} />
             <ProjectThreeDCard

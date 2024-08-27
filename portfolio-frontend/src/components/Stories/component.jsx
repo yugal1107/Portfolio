@@ -54,10 +54,10 @@ export default function StoriesComponent() {
       {/* <h1 className="text-5xl font-bold text-center text-white">Stories</h1> */}
       <TypewriterEffect
         words={[
-          { text: "Stories", className: "dark:text-yellow-300 font-light" },
+          { text: "Stories", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
         ]}
       />
-      <div className="bg-black flex gap-6 overflow-x-scroll">
+      <div className="bg-black flex flex-col lg:flex-row gap-6 overflow-x-scroll">
         {stories.map((story, index) => {
           return (
             <ThreeDCard
