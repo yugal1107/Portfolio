@@ -32,7 +32,7 @@ const About = () => {
             <div className="text-red-500">PostgreSQL</div>
           </div> */}
         </div>
-        <IconGrid className="mx-4" />
+        <IconGrid className="mx-auto" />
       </div>
     </section>
   );
