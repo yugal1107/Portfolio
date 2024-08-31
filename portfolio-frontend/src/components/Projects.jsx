@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import TextAnimation from "./TextAnimation";
 import ProjectCard from "./ProjectCard";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import { ProjectThreeDCard } from "./Projects3dcard";
+import SectionWrapper from "./SectionWrapper";
 
 const projects = [
   {
@@ -29,34 +30,64 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const projectsToShow = 3;
+
+  const handleNext = () => {
+    if (currentIndex + projectsToShow < projects.length) {
+      setCurrentIndex(currentIndex + projectsToShow);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex - projectsToShow >= 0) {
+      setCurrentIndex(currentIndex - projectsToShow);
+    }
+  };
+
   return (
-    <section id="projects" className="py-10 px-8 pb-24">
-      <div className="container mx-auto text-center">
-        {/* <TextAnimation
+    <SectionWrapper>
+      {/* <TextAnimation
           text="Projects"
           className="text-4xl text-[#66d9ef] font-normal mb-5"
         />{" "} */}
-        <TypewriterEffect
-          words={[
-            { text: "Projects", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
-          ]}
-        />
-        {/* Changed text color to a bright blue-green */}
-        {/* <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10"> */}
-        <div className="bg-black flex flex-col lg:flex-row gap-6 overflow-x-scroll">
-          {projects.map((project, index) => (
-            // <ProjectCard project={project} key={index} />
-            <ProjectThreeDCard
-              key={index}
-              title={project.title}
-              livelink={project.link}
-              cardImage={project.photolink}
-              description={project.description}
-            />
-          ))}
+      <TypewriterEffect
+        words={[
+          {
+            text: "Projects",
+            className: "dark:text-yellow-300 font-light text-4xl md:text-6xl",
+          },
+        ]}
+      />
+      {/* Changed text color to a bright blue-green */}
+      {/* <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10"> */}
+        <button
+          onClick={handlePrev}
+          className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-bold p-3"
+        >
+          &lt;
+        </button>
+        <div className=" flex flex-col lg:flex-row gap-2 lg:gap-6 justify-center mx-auto">
+          {projects
+            .slice(currentIndex, currentIndex + projectsToShow)
+            .map((project, index) => (
+              // <ProjectCard project={project} key={index} />
+              <ProjectThreeDCard
+                key={index}
+                title={project.title}
+                livelink={project.link}
+                cardImage={project.photolink}
+                description={project.description}
+              />
+            ))}
         </div>
-      </div>
-    </section>
+        <button
+          onClick={handleNext}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-bold p-3"
+        >
+          &gt;
+        </button>
+    </SectionWrapper>
   );
 };
 

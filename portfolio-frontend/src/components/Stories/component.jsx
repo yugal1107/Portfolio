@@ -2,6 +2,7 @@ import React from "react";
 import StoryCard from "./StoryCard";
 import { ThreeDCard } from "./ThreeDCard";
 import { TypewriterEffect } from "../ui/typewriter-effect";
+import SectionWrapper from "../SectionWrapper";
 
 const stories = [
   {
@@ -50,14 +51,17 @@ const stories = [
 
 export default function StoriesComponent() {
   return (
-    <section className="container mx-auto rounded-3xl px-8 pb-24">
+    <SectionWrapper>
       {/* <h1 className="text-5xl font-bold text-center text-white">Stories</h1> */}
       <TypewriterEffect
         words={[
-          { text: "Stories", className: "dark:text-yellow-300 font-light text-4xl md:text-6xl" },
+          {
+            text: "Stories",
+            className: "dark:text-yellow-300 font-light text-4xl md:text-6xl",
+          },
         ]}
       />
-      <div className="bg-black flex flex-col lg:flex-row gap-6 overflow-x-scroll">
+      <div className="bg-black flex flex-col lg:flex-row gap-2 lg:gap-6 overflow-x-scroll">
         {stories.map((story, index) => {
           return (
             <ThreeDCard
@@ -72,6 +76,6 @@ export default function StoriesComponent() {
           );
         })}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

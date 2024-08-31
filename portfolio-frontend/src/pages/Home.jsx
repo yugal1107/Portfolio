@@ -8,8 +8,9 @@ import StoriesComponent from "../components/Stories/component";
 // import Menu from "../assets/menu.svg";
 
 function Home() {
-
   return (
+    // <div id="particles-js" className="bg-black">
+    // <BackgroundBeamsWithCollision>
     <div id="particles-js" className="bg-black">
       {/* <App /> */}
       <Introduction />
@@ -18,6 +19,7 @@ function Home() {
       <About />
       <Contact />
     </div>
+    // </BackgroundBeamsWithCollision>
   );
 }
 
