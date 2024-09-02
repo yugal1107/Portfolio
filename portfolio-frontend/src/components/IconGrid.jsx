@@ -14,12 +14,14 @@ import {
   SiCplusplus,
   SiTailwindcss,
   SiDocker,
+  SiGithub,
+  SiGit,
 } from "react-icons/si";
 
 const IconGrid = ({ className }) => {
   return (
     <div
-      className={`flex flex-wrap gap-4 pt-7 md:gap-7 xl:gap-10 ${className}`}
+      className={`flex flex-wrap justify-center gap-4 pt-7 md:gap-7 xl:gap-10 ${className}`}
     >
       <DiReact className="text-white hover:text-cyan-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <DiPython className="text-white hover:text-yellow-400 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
@@ -33,9 +35,9 @@ const IconGrid = ({ className }) => {
       <SiCplusplus className="text-white hover:text-blue-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <SiTailwindcss className="text-white hover:text-cyan-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
       <SiDocker className="text-white hover:text-cyan-600 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiGithub className="text-white hover:text-white text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
+      <SiGit className="text-white hover:text-red-500 text-7xl md:text-9xl p-4 rounded-2xl  hover:bg-slate-900" />
     </div>
   );
 };
 export default IconGrid;
-
-
