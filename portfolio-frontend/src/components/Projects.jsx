@@ -4,6 +4,8 @@ import ProjectCard from "./ProjectCard";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import { ProjectThreeDCard } from "./Projects3dcard";
 import SectionWrapper from "./SectionWrapper";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 const projects = [
   {
@@ -31,7 +33,7 @@ const projects = [
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const projectsToShow = 3;
+  const projectsToShow = 2;
 
   const handleNext = () => {
     if (currentIndex + projectsToShow < projects.length) {
@@ -61,32 +63,32 @@ const Projects = () => {
       />
       {/* Changed text color to a bright blue-green */}
       {/* <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10"> */}
-        <button
-          onClick={handlePrev}
-          className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-bold p-3"
-        >
-          &lt;
-        </button>
-        <div className=" flex flex-col lg:flex-row gap-2 lg:gap-6 justify-center mx-auto">
-          {projects
-            .slice(currentIndex, currentIndex + projectsToShow)
-            .map((project, index) => (
-              // <ProjectCard project={project} key={index} />
-              <ProjectThreeDCard
-                key={index}
-                title={project.title}
-                livelink={project.link}
-                cardImage={project.photolink}
-                description={project.description}
-              />
-            ))}
-        </div>
-        <button
-          onClick={handleNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-bold p-3"
-        >
-          &gt;
-        </button>
+      <button
+        onClick={handlePrev}
+        className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+      >
+        <FaArrowLeft />
+      </button>
+      <div className=" flex flex-col lg:flex-row gap-2 lg:gap-20 justify-center mx-auto">
+        {projects
+          .slice(currentIndex, currentIndex + projectsToShow)
+          .map((project, index) => (
+            // <ProjectCard project={project} key={index} />
+            <ProjectThreeDCard
+              key={index}
+              title={project.title}
+              livelink={project.link}
+              cardImage={project.photolink}
+              description={project.description}
+            />
+          ))}
+      </div>
+      <button
+        onClick={handleNext}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+      >
+        <FaArrowRight />
+      </button>
     </SectionWrapper>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { Link } from "react-router-dom";
+import { SiGithub } from "react-icons/si";
 
 export function ProjectThreeDCard({
   title,
@@ -34,13 +35,13 @@ export function ProjectThreeDCard({
             alt="thumbnail"
           />
         </CardItem>
-        <div className="flex justify-between items-center mt-20">
+        <div className="flex justify-between items-center mt-10">
           <CardItem
             translateZ={20}
             as={Link}
             to={livelink}
             target="__blank"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+            className="px-4 py-2 rounded-xl text-base font-normal dark:text-white"
           >
             Try Live →
           </CardItem>
@@ -48,8 +49,9 @@ export function ProjectThreeDCard({
             <CardItem
               translateZ={20}
               as="button"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-base font-bold"
             >
+              <SiGithub className="inline-block mr-2" />
               Link
             </CardItem>
           </a>

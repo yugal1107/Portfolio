@@ -1,8 +1,10 @@
-import React from "react";
+import { React, useState } from "react";
 import StoryCard from "./StoryCard";
 import { ThreeDCard } from "./ThreeDCard";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import SectionWrapper from "../SectionWrapper";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 const stories = [
   {
@@ -50,6 +52,22 @@ const stories = [
 ];
 
 export default function StoriesComponent() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const storiesToShow = 2;
+
+  const handleNext = () => {
+    if (currentIndex + storiesToShow < stories.length) {
+      setCurrentIndex(currentIndex + storiesToShow);
+      console.log(currentIndex);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex - storiesToShow >= 0) {
+      setCurrentIndex(currentIndex - storiesToShow);
+    }
+  };
+
   return (
     <SectionWrapper>
       {/* <h1 className="text-5xl font-bold text-center text-white">Stories</h1> */}
@@ -61,21 +79,35 @@ export default function StoriesComponent() {
           },
         ]}
       />
-      <div className="bg-black flex flex-col lg:flex-row gap-2 lg:gap-6 overflow-x-scroll">
-        {stories.map((story, index) => {
-          return (
-            <ThreeDCard
-              id={story.index}
-              key={story.id}
-              title={story.title}
-              date={story.date}
-              image={story.cardimage}
-              status={story.status}
-              location={story.location}
-            />
-          );
-        })}
+      <button
+        onClick={handlePrev}
+        className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+      >
+        <FaArrowLeft />
+      </button>
+      <div className=" flex flex-col lg:flex-row lg:gap-20 justify-center mx-auto">
+        {stories
+          .slice(currentIndex, currentIndex + storiesToShow)
+          .map((story, index) => {
+            return (
+              <ThreeDCard
+                id={index}
+                key={index}
+                title={story.title}
+                date={story.date}
+                image={story.cardimage}
+                status={story.status}
+                location={story.location}
+              />
+            );
+          })}
       </div>
+      <button
+        onClick={handleNext}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+      >
+        <FaArrowRight />
+      </button>
     </SectionWrapper>
   );
 }
