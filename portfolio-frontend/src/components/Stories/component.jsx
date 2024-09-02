@@ -3,7 +3,7 @@ import StoryCard from "./StoryCard";
 import { ThreeDCard } from "./ThreeDCard";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import SectionWrapper from "../SectionWrapper";
-import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowDown, FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 
 const stories = [
@@ -53,7 +53,8 @@ const stories = [
 
 export default function StoriesComponent() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const storiesToShow = 2;
+  const [storiesToShow, setstoriesToShow] = useState(2);
+  const [viewAll, setViewAll] = useState(true);
 
   const handleNext = () => {
     if (currentIndex + storiesToShow < stories.length) {
@@ -81,7 +82,7 @@ export default function StoriesComponent() {
       />
       <button
         onClick={handlePrev}
-        className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+        className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-16 hidden lg:block"
       >
         <FaArrowLeft />
       </button>
@@ -101,10 +102,23 @@ export default function StoriesComponent() {
               />
             );
           })}
+
+        <button
+          className={`bg-gray-900 text-white p-2 px-4 rounded-full mx-auto lg:hidden ${
+            viewAll ? "" : "hidden"
+          }`}
+          onClick={() => {
+            setCurrentIndex(0);
+            setstoriesToShow(stories.length);
+            setViewAll(false);
+          }}
+        >
+          View All <FaArrowDown className="inline lg:hidden" />
+        </button>
       </div>
       <button
         onClick={handleNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-16 hidden lg:block"
       >
         <FaArrowRight />
       </button>

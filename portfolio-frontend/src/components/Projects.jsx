@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import { ProjectThreeDCard } from "./Projects3dcard";
 import SectionWrapper from "./SectionWrapper";
-import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowDown, FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 
 const projects = [
@@ -33,7 +33,8 @@ const projects = [
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const projectsToShow = 2;
+  const [projectsToShow, setprojectsToShow] = useState(2);
+  const [viewAll, setViewAll] = useState(true);
 
   const handleNext = () => {
     if (currentIndex + projectsToShow < projects.length) {
@@ -65,7 +66,7 @@ const Projects = () => {
       {/* <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10"> */}
       <button
         onClick={handlePrev}
-        className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+        className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-16 hidden lg:block"
       >
         <FaArrowLeft />
       </button>
@@ -82,10 +83,23 @@ const Projects = () => {
               description={project.description}
             />
           ))}
+
+        <button
+          className={`bg-gray-900 text-white p-2 px-4 rounded-full mx-auto lg:hidden ${
+            viewAll ? "" : "hidden"
+          }`}
+          onClick={() => {
+            setCurrentIndex(0);
+            setprojectsToShow(projects.length);
+            setViewAll(false);
+          }}
+        >
+          View All <FaArrowDown className="inline lg:hidden" />
+        </button>
       </div>
       <button
         onClick={handleNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-3 hidden lg:block"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-16 hidden lg:block"
       >
         <FaArrowRight />
       </button>
