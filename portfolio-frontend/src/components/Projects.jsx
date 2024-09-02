@@ -16,18 +16,18 @@ const projects = [
     photolink: "/project1.png",
   },
   {
-    title: "Data Analysis Using Python",
-    description:
-      "Analyzed data using Python libraries such as Pandas and Matplotlib to gain insights into the data of marks of students and visualize the results.",
-    link: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
-    photolink: "/project2-front.png",
-  },
-  {
     title: "AI Quiz Generator",
     description:
       "An AI-powered quiz generator that creates random MCQs on any topic. Users can select the difficulty level and receive their score instantly after completing the quiz.",
     link: "https://quizzzify.vercel.app",
     photolink: "/ai-quiz.png",
+  },
+  {
+    title: "Data Analysis Using Python",
+    description:
+      "Analyzed data using Python libraries such as Pandas and Matplotlib to gain insights into the data of marks of students and visualize the results.",
+    link: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
+    photolink: "/project2-front.png",
   },
 ];
 
