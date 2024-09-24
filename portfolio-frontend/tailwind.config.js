@@ -2,13 +2,19 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      "Roboto-mono": ["Roboto", "monospace"],
+      "space-monospace": ["Space Mono", "monospace"],
+      "raleway": ["Raleway", "sans-serif"],
+      "montserrat": ["Montserrat", "sans-serif"],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -74,4 +80,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

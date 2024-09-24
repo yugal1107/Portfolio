@@ -11,7 +11,7 @@ function Home() {
   return (
     // <div id="particles-js" className="bg-black">
     // <BackgroundBeamsWithCollision>
-    <div id="particles-js" className="bg-black">
+    <div id="particles-js" className="bg-black font-montserrat">
       {/* <App /> */}
       <Introduction />
       <Projects />

@@ -1,6 +1,7 @@
 import React from "react";
 import profile from "/profile.jpg";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
+import Profiles from "./myUI/Profiles";
 
 const Introduction = () => {
   const handleClick = () => {
@@ -41,22 +42,19 @@ const Introduction = () => {
         <div className="text-md xl:text-xl text-slate-500 xl:pt-1">
           Full Stack Developer
         </div>
-        <div className="text-neutral-300 my-4 p-2 border-solid border-yellow-400 border rounded-xl/ xl:text-xl">
+        <div className="text-neutral-300 my-4 p-2 border-solid border-yellow-400 border rounded-xl/ xl:text-xl font-space-monospace">
           I am a passionate developer with experience in creating dynamic and
           responsive web applications. I am currently pursuing by B.Tech in MITS
           Gwalior with current CGPA of 8.5. My expertise includes MERN stack,
-          API handling and progamming languages including Jvaascript, Python and
+          API handling and progamming languages including Javascript, Python and
           C++. I likes to know about new technologies and always eager to learn
           new things about technology.
         </div>
-        <div className="w-full flex justify-around">
-          {/* <button
-            onClick={handleClick}
-            className="bg-yellow-300 text-black p-2 rounded-sm xl:text-xl hover:bg-yellow-400"
-          >
+        <div className="w-full flex flex-col justify-around">
+          {/* <Profiles /> */}
+          <HoverBorderGradient onClick={handleClick}>
             Download Resume
-          </button> */}
-          <HoverBorderGradient onClick={handleClick}>Download Resume</HoverBorderGradient>
+          </HoverBorderGradient>
         </div>
       </div>
     </section>

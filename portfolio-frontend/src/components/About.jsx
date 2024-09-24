@@ -1,6 +1,6 @@
 import React from "react";
 import TextAnimation from "./TextAnimation";
-import IconGrid from "./IconGrid";
+import IconGrid from "./myUI/IconGrid";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 
 const About = () => {
