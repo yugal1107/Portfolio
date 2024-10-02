@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Stories from "./pages/Stories.jsx";
+import TechStack from "./components/myUI/TechStack.jsx";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/stories" element={<Stories />} />
+        <Route path="/tech" element={<TechStack/>} />
       </Routes>
     </BrowserRouter>
   );
