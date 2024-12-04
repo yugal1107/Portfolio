@@ -19,11 +19,10 @@ import {
   SiGithub,
   SiGit,
   SiEducative,
-  SiWindows10,
   SiGithubactions,
   SiLeetcode,
   SiCodechef,
-  SiCodeforces
+  SiCodeforces,
 } from "react-icons/si";
 
 const TechStackGrid = () => {
@@ -56,7 +55,7 @@ const TechStackGrid = () => {
     },
     {
       category: "Frontend",
-      icon: <SiWindows10 />,
+      icon: <SiTailwindcss />,
       items: [
         { icon: <DiReact />, name: "React", hoverColor: "hover:text-cyan-500" },
         {
