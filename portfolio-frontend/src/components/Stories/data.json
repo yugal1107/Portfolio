@@ -1,0 +1,158 @@
+{
+  "stories": [
+    {
+      "id": 1,
+      "title": "HackN'dore",
+      "date": "26th July - 28th July",
+      "location": "Indore, MP",
+      "status": "recent",
+      "cardImage": "/hackindore.jpg",
+      "images": ["/certificate-hackndore.jpg"],
+      "description": [
+        "I had the opportunity to attend a 3-day hackathon in Indore named HackN'dore, organized by IMC Indore at Acropolis College. It was an exhilarating experience where I was part of a team of five students, including Pratham Sharma, Yuvraj Yadav, Tejaswa Jhode, Yogesh Jat, and myself. We were all excited to showcase our skills and collaborate on innovative projects.",
+        "During the event, we had the chance to meet the Mayor of Indore, which was a remarkable experience. The Mayor's presence added a sense of importance and recognition to the event, and we were thrilled to interact with such a distinguished personality. This interaction provided us with valuable insights and encouragement to pursue our goals.",
+        "Apart from the competition, the hackathon was a great platform for networking. We made connections with many like-minded individuals and industry professionals. The event was not just about coding but also about learning, sharing knowledge, and building relationships that could help us in our future endeavors."
+      ],
+      "project": {
+        "name": "Water Supply Management System",
+        "techStack": ["React", "Node.js", "IoT", "Machine Learning"],
+        "description": "Developed a system to monitor water supply in real-time",
+        "github": "https://github.com/YogeshJat8965/WaterManagement"
+      },
+      "outcomes": [
+        "Implemented end-to-end IoT solution",
+        "Enhanced team collaboration skills"
+      ],
+      "team": {
+        "name": "Code Crusaders",
+        "members": [
+          {
+            "name": "Yugal Burde (Me)",
+            "role": "Full Stack Developer",
+            "LinkedIn": "https://www.linkedin.com/in/yugal-burde-58012a256/"
+          },
+          {
+            "name": "Pratham Sharma",
+            "role": "Machine Learning Engineer",
+            "LinkedIn": "https://www.linkedin.com/in/pratham-sharma-9a5307251/"
+          },
+          {
+            "name": "Yuvraj Yadav",
+            "role": "Backend Developer",
+            "LinkedIn": "https://www.linkedin.com/in/yuvraj7000/"
+          },
+          {
+            "name": "Tejaswa Jhode",
+            "role": "IoT Developer",
+            "LinkedIn": "https://www.linkedin.com/in/tejaswa-jhode-669362163/"
+          },
+          {
+            "name": "Yogesh Jat",
+            "role": "Frontend Developer",
+            "LinkedIn": "https://www.linkedin.com/in/yogesh-jat-94590728b/"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "DevsHouse",
+      "date": "15th August - 17th August",
+      "location": "VIT Chennai, TN",
+      "status": "recent",
+      "cardImage": "/devshouse.jpg",
+      "images": [
+        "/devshouse-cover.jpg",
+        "/yugal-chennai.jpg",
+        "/deepanshu.jpg",
+        "/akshat.jpg",
+        "/idcard-chennai.jpg"
+      ],
+      "description": [
+        "I had attended a 3-day hackathon named DevsHouse at VIT Chennai, organized by GDSC of that College. It was my first hackathon and I had a great experience interacting with new people from the south and the tech community there.",
+        "We made a project called OTAx, which is an Order Tracking Accompany application. It includes three types of users: driver, buyer, and manager of services. Users can track the real-time location of the truck driver and details of the truck driver associated with the package, which is updated by the manager.",
+        "We built it using Node.js as the backend, React as the frontend with TailwindCSS, and MongoDB as the database."
+      ],
+      "project": {
+        "name": "OTAx",
+        "techStack": [
+          "Node.js",
+          "React",
+          "TailwindCSS",
+          "MongoDB",
+          "JWT Authentication"
+        ],
+        "description": "An application for real-time order tracking with different user roles"
+      },
+      "outcomes": [
+        "Developed a full-stack application",
+        "Integrated real-time location tracking",
+        "Enhanced team collaboration and technical skills"
+      ],
+      "team": {
+        "name": "Tech Titans",
+        "members": [
+          {
+            "name": "Yugal Burde (Me)",
+            "role": "React Leaflet Maps Integration",
+            "LinkedIn": "https://www.linkedin.com/in/yugal-burde-58012a256/"
+          },
+          {
+            "name": "Tanmay Sawankar",
+            "role": "Team Lead",
+            "LinkedIn": "https://www.linkedin.com/in/tanmay-sawankar-57a945223/"
+          },
+          {
+            "name": "Akshat Jain",
+            "role": "Backend Developer",
+            "LinkedIn": "https://www.linkedin.com/in/its-akshat-jain/"
+          },
+          {
+            "name": "Deepanshu Pathak",
+            "role": "Frontend Developer",
+            "LinkedIn": "https://www.linkedin.com/in/deepanshu-pathak-262428265/"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Codathon 2.0",
+      "date": "10th September - 12th September",
+      "location": "Gwalior, MP",
+      "status": "1 year ago",
+      "cardImage": "/codathon.jpg",
+      "images": [],
+      "description": [
+        "Codathon 2.0 was a 3-day competitive contest held in our college, organized by IETE in collaboration with Coding Ninjas. The event featured three rounds of intense competition.",
+        "Our team, consisting of Pratham Sharma and myself, successfully reached the final round and were among the top 10 teams in the college. It was an exhilarating experience solving DSA coding questions and applying programming logic.",
+        "The event provided a great platform to test our skills, learn new concepts, and interact with fellow coders."
+      ],
+      "project": {
+        "name": "Code Competition Platform",
+        "techStack": ["React", "Express", "MongoDB", "Socket.io"],
+        "description": "Created a real-time code compilation and competition platform"
+      },
+      "outcomes": [
+        "Solved complex DSA problems",
+        "Enhanced problem-solving skills",
+        "Improved programming logic and efficiency"
+      ],
+      "team": {
+        "name": "Dynamic Duo",
+        "members": [
+          {
+            "name": "Yugal Burde (Me)",
+            "role": "DSA and Programmer in C++",
+            "LinkedIn": "https://www.linkedin.com/in/yugal-burde-58012a256/"
+          },
+          {
+            "name": "Pratham Sharma",
+            "role": "Python Specialist and Programmer",
+            "LinkedIn": "https://www.linkedin.com/in/pratham-sharma-9a5307251/"
+          }
+        ]
+      }
+    }
+  ]
+}
