@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import profile from "/profile.jpg";
+import profile from "/profile.png";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import ChatBot from "./ChatBot";

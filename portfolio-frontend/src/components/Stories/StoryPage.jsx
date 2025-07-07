@@ -120,7 +120,7 @@ export default function StoryPage() {
         {story.outcomes && (
           <div className="mt-8">
             <h2 className="text-2xl font-bold text-white mb-4">
-              Key Takeaways
+              Key Outcomes and achievements
             </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-300">
               {story.outcomes.map((outcome, index) => (
