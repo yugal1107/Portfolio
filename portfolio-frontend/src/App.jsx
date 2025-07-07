@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Stories from "./pages/Stories.jsx";
 import TechStack from "./components/myUI/TechStack.jsx";
 import StoryPage from "./components/Stories/StoryPage.jsx";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/tech" element={<TechStack />} />
         <Route path="/story/:id" element={<StoryPage />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }

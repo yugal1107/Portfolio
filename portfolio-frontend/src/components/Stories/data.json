@@ -2,6 +2,76 @@
   "stories": [
     {
       "id": 1,
+      "title": "HackHound 3.0",
+      "date": "27th Feb - 28th Feb, 2025",
+      "location": "SRM Modinagar Campus, Delhi NCR, UP",
+      "status": "recent",
+      "cardImage": "/hackhound-presentation.jpeg",
+      "images": [
+        "/hackhound-team.jpeg",
+        "/hackhound-presentation.jpeg",
+        "/hackhound-certificate.jpeg",
+        "/hackhound-group-photo.jpeg"
+      ],
+      "description": [
+        "I participated in HackHound 3.0, a 2-day hackathon at SRM Modinagar Campus, organized by the university's tech community. It was an incredible experience collaborating with talented peers and engaging with the vibrant tech ecosystem.",
+        "Our team developed a project called MahaKumbh, a comprehensive web application designed to enhance the experience of devotees attending the Maha Kumbh Mela. The platform provides real-time stampede  updates, crowd management, and essential information for pilgrims.",
+        "We built the application using React for the frontend, Node.js with Express for the backend, MongoDB for the database, and integrated APIs for real-time data and user authentication, YOLO for object detection, and Streamlit for visualization."
+      ],
+      "project": {
+        "name": "MahaKumbh",
+        "techStack": [
+          "Next.js",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "REST APIs",
+          "JWT Authentication",
+          "Web Sockets",
+          "Yolov5 for Object Detection",
+          "OAUth for Authentication",
+          "Streamlit for Object Detection Visualization"
+        ],
+        "description": "A web application to assist devotees at Maha Kumbh Mela with real-time updates, crowd management, and essential services."
+      },
+      "outcomes": [
+        "🏆 Secured a spot in the Top 10 shortlisted teams out of a fierce pool of innovators",
+        "🎯 Won the MongoDB and Streamlit track Winner title",
+        "🔧 Took home a 37-sensor kit and an Arduino R4 board as prizes"
+      ],
+      "team": {
+        "name": "Tech Titans",
+        "members": [
+          {
+            "name": "Yugal Burde (Me)",
+            "role": "Full Stack Developer",
+            "LinkedIn": "https://www.linkedin.com/in/yugal-burde-58012a256/"
+          },
+          {
+            "name": "Tanmay Sawankar",
+            "role": "Team Lead",
+            "LinkedIn": "https://www.linkedin.com/in/tanmay-sawankar-57a945223/"
+          },
+          {
+            "name": "Akshat Jain",
+            "role": "Backend Developer)",
+            "LinkedIn": "https://www.linkedin.com/in/its-akshat-jain/"
+          },
+          {
+            "name": "Om Bhayde",
+            "role": "Frontend Developer",
+            "LinkedIn": "https://www.linkedin.com/in/om-bhayde-66a643253/"
+          },
+          {
+            "name": "Pratham Sharma",
+            "role": "Machine Learning Engineer",
+            "LinkedIn": "https://www.linkedin.com/in/pratham-sharma-9a5307251/"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
       "title": "HackN'dore",
       "date": "26th July - 28th July",
       "location": "Indore, MP",
@@ -55,7 +125,7 @@
       }
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "DevsHouse",
       "date": "15th August - 17th August",
       "location": "VIT Chennai, TN",
@@ -116,7 +186,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Codathon 2.0",
       "date": "10th September - 12th September",
       "location": "Gwalior, MP",
@@ -149,6 +219,76 @@
           {
             "name": "Pratham Sharma",
             "role": "Python Specialist and Programmer",
+            "LinkedIn": "https://www.linkedin.com/in/pratham-sharma-9a5307251/"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "HackHound 3.0",
+      "date": "27th Feb - 28th Feb, 2025",
+      "location": "SRM Modinagar Campus, Delhi NCR, UP",
+      "status": "recent",
+      "cardImage": "/hackhound-presentation.jpeg",
+      "images": [
+        "/hackhound-team.jpeg",
+        "/hackhound-presentation.jpeg",
+        "/hackhound-certificate.jpeg",
+        "/hackhound-group-photo.jpeg"
+      ],
+      "description": [
+        "I participated in HackHound 3.0, a 2-day hackathon at SRM Modinagar Campus, organized by the university's tech community. It was an incredible experience collaborating with talented peers and engaging with the vibrant tech ecosystem.",
+        "Our team developed a project called MahaKumbh, a comprehensive web application designed to enhance the experience of devotees attending the Maha Kumbh Mela. The platform provides real-time stampede  updates, crowd management, and essential information for pilgrims.",
+        "We built the application using React for the frontend, Node.js with Express for the backend, MongoDB for the database, and integrated APIs for real-time data and user authentication, YOLO for object detection, and Streamlit for visualization."
+      ],
+      "project": {
+        "name": "MahaKumbh",
+        "techStack": [
+          "Next.js",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "REST APIs",
+          "JWT Authentication",
+          "Web Sockets",
+          "Yolov5 for Object Detection",
+          "OAUth for Authentication",
+          "Streamlit for Object Detection Visualization"
+        ],
+        "description": "A web application to assist devotees at Maha Kumbh Mela with real-time updates, crowd management, and essential services."
+      },
+      "outcomes": [
+        "🏆 Secured a spot in the Top 10 shortlisted teams out of a fierce pool of innovators",
+        "🎯 Won the MongoDB and Streamlit track Winner title",
+        "🔧 Took home a 37-sensor kit and an Arduino R4 board as prizes"
+      ],
+      "team": {
+        "name": "Tech Titans",
+        "members": [
+          {
+            "name": "Yugal Burde (Me)",
+            "role": "Full Stack Developer",
+            "LinkedIn": "https://www.linkedin.com/in/yugal-burde-58012a256/"
+          },
+          {
+            "name": "Tanmay Sawankar",
+            "role": "Team Lead",
+            "LinkedIn": "https://www.linkedin.com/in/tanmay-sawankar-57a945223/"
+          },
+          {
+            "name": "Akshat Jain",
+            "role": "Backend Developer)",
+            "LinkedIn": "https://www.linkedin.com/in/its-akshat-jain/"
+          },
+          {
+            "name": "Om Bhayde",
+            "role": "Frontend Developer",
+            "LinkedIn": "https://www.linkedin.com/in/om-bhayde-66a643253/"
+          },
+          {
+            "name": "Pratham Sharma",
+            "role": "Machine Learning Engineer",
             "LinkedIn": "https://www.linkedin.com/in/pratham-sharma-9a5307251/"
           }
         ]

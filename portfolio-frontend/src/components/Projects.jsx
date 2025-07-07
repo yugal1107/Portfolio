@@ -13,7 +13,8 @@ const projects = [
     description:
       "Developed a dynamic movies website with Node.js, Express.js, EJS, and an external API, allowing users to explore movie details, view films by cast members, and browse by genre.",
     link: "https://moviesfrontend-two.vercel.app/",
-    photolink: "/project1.png",
+    photolink: "/movies-website-image.png",
+    githublink: "https://github.com/yugal1107/YMoviez---Movies-Website",
   },
   {
     title: "AI Quiz Generator",
@@ -21,6 +22,14 @@ const projects = [
       "An AI-powered quiz generator that creates random MCQs on any topic. Users can select the difficulty level and receive their score instantly after completing the quiz.",
     link: "https://quizzzify.vercel.app",
     photolink: "/ai-quiz.png",
+    githublink: "https://github.com/yugal1107/Testyourself--AI-quiz-app",
+  },
+  {
+    title: "Shiksha Mitra",
+    description: "ShikshaMitra is a next-gen educational ecosystem built to bridge the gap between students, teachers, and institutions through technology.",
+    link: "https://shikshamitra-virid.vercel.app/",
+    photolink: "/shiskhamitra_img.png",
+    githublink: "https://github.com/yugal1107/Shiksha-Mitra",
   },
   {
     title: "Data Analysis Using Python",
@@ -28,7 +37,16 @@ const projects = [
       "Analyzed data using Python libraries such as Pandas and Matplotlib to gain insights into the data of marks of students and visualize the results.",
     link: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
     photolink: "/project2-front.png",
+    githublink: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
   },
+  // {
+  //   title: "AI Chatbot",
+  //   description:
+  //     "An AI-powered PDF chatbot that allows users to upload a PDF and ask questions about its content, providing instant answers based on the document.",
+  //   link: "https://ai-chatbot-black-one.vercel.app/",
+  //   photolink: "/pdf-chatbot.png",
+  //   githublink: "https://github.com/yugal1107/AI-Chatbot"
+  // }
 ];
 
 const Projects = () => {
@@ -81,6 +99,7 @@ const Projects = () => {
               livelink={project.link}
               cardImage={project.photolink}
               description={project.description}
+              githublink={project.githublink}
             />
           ))}
 

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import profile from "/profile.jpg";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import ChatBot from "./ChatBot";
 
 const Introduction = () => {
   const handleClick = () => {
@@ -119,6 +120,9 @@ const Introduction = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* Add the ChatBot component */}
+        {/* <ChatBot /> */}
       </motion.div>
     </section>
   );
