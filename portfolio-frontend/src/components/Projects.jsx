@@ -12,7 +12,7 @@ const projects = [
     title: "Dynamic Movies Website",
     description:
       "Developed a dynamic movies website with Node.js, Express.js, EJS, and an external API, allowing users to explore movie details, view films by cast members, and browse by genre.",
-    link: "https://moviesfrontend-two.vercel.app/",
+    link: "https://movies.yugal.tech",
     photolink: "/movies-website-image.png",
     githublink: "https://github.com/yugal1107/YMoviez---Movies-Website",
   },
@@ -26,7 +26,8 @@ const projects = [
   },
   {
     title: "Shiksha Mitra",
-    description: "ShikshaMitra is a next-gen educational ecosystem built to bridge the gap between students, teachers, and institutions through technology.",
+    description:
+      "ShikshaMitra is a next-gen educational ecosystem built to bridge the gap between students, teachers, and institutions through technology.",
     link: "https://shikshamitra-virid.vercel.app/",
     photolink: "/shiskhamitra_img.png",
     githublink: "https://github.com/yugal1107/Shiksha-Mitra",
@@ -37,7 +38,8 @@ const projects = [
       "Analyzed data using Python libraries such as Pandas and Matplotlib to gain insights into the data of marks of students and visualize the results.",
     link: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
     photolink: "/project2-front.png",
-    githublink: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
+    githublink:
+      "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
   },
   // {
   //   title: "AI Chatbot",
