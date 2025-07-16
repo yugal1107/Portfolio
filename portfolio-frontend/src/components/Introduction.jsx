@@ -122,7 +122,7 @@ const Introduction = () => {
         </motion.div>
 
         {/* Add the ChatBot component */}
-        {/* <ChatBot /> */}
+        <ChatBot />
       </motion.div>
     </section>
   );

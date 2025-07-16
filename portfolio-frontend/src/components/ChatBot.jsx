@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid"; // You may need to install this: npm instal
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hi there! I'm Yugal. How can I help you?", sender: "bot" },
+    { id: 1, text: "Hi there! I'm Yugal. How are you", sender: "bot" },
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +39,7 @@ const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/chat", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
