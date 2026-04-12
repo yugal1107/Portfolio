@@ -14,8 +14,10 @@ function Navbar() {
       <nav className="text-white justify-between align-middle px-4 py-4 bg-black max-w-full overflow-x-hidden">
         <div className="flex justify-between">
           <div className="text-3xl font-extralight">
-            <span className="text-red-500">Y</span>ugal{" "}
-            <span className="text-red-500">B</span>urde
+            <Link to="/">
+              <span className="text-red-500">Y</span>ugal{" "}
+              <span className="text-red-500">B</span>urde
+            </Link>
           </div>
           {/* <div className="pt-2"> */}
 
@@ -30,6 +32,11 @@ function Navbar() {
             </svg> */}
             {/* {isOpen ? <Close onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />} */}
           {/* </div> */}
+        </div>
+        <div className="mt-3 flex flex-wrap gap-4 text-sm text-gray-300">
+          <Link to="/" className="hover:text-white">Home</Link>
+          <Link to="/stories" className="hover:text-white">Stories</Link>
+          <Link to="/admin" className="hover:text-white">Admin</Link>
         </div>
         <div className={`absolute p-3 left-0 right-0 flex flex-col gap-5 text-xl font-light backdrop-blur-md bg-white/30 ${isOpen ? 'top-20' : '-top-96'}`}>  
           <Link to="">Home</Link>

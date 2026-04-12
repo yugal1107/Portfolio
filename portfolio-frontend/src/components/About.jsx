@@ -3,7 +3,7 @@ import TextAnimation from "./TextAnimation";
 import IconGrid from "./myUI/IconGrid";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 
-const About = () => {
+const About = ({ skillGroups = [], isLoading, error }) => {
   return (
     <section id="about" className="py-10 ">
       <div className="flex justify-center">
@@ -17,7 +17,11 @@ const About = () => {
         />
       </div>
       <div className="px-4">
-        <IconGrid />
+        <IconGrid
+          skillGroups={skillGroups}
+          isLoading={isLoading}
+          error={error}
+        />
       </div>
     </section>
   );

@@ -2,12 +2,12 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { useNavigate } from "react-router-dom";
 
-export function ThreeDCard({ id, title, date, image, status, location }) {
+export function ThreeDCard({ slug, title, date, image, status, location }) {
   const navigate = useNavigate();
   
   return (
     <div
-      onClick={() => navigate(`/story/${id}`)}
+      onClick={() => navigate(`/story/${slug}`)}
       className="cursor-pointer relative group perspective-1000"
     >
       <CardContainer className="inter-var">

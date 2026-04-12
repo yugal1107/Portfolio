@@ -1,23 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import storiesData from "./data.json";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
+import { getPublicStoryBySlug } from "../../services/publicApi";
+import { resolveImageUrl } from "../../lib/cloudinary";
 
 export default function StoryPage() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
+  const [story, setStory] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // Find story by id from URL params
-  const story = storiesData.stories.find((s) => s.id === parseInt(id));
+  useEffect(() => {
+    const loadStory = async () => {
+      try {
+        setIsLoading(true);
+        setError("");
+        const data = await getPublicStoryBySlug(slug);
+        setStory(data);
+      } catch (loadError) {
+        console.error("Failed to load story", loadError);
+        setError("Story not found");
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  // Handle case when story is not found
-  if (!story) {
+    loadStory();
+  }, [slug]);
+
+  const markdownParagraphs = story?.contentMarkdown
+    ? story.contentMarkdown.split(/\n\n+/).filter(Boolean)
+    : [];
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen p-4 flex items-center justify-center">
+        <div className="text-center text-gray-300">Loading story...</div>
+      </div>
+    );
+  }
+
+  if (!story || error) {
     return (
       <div className="min-h-screen p-4 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">
-            Story not found
+            {error || "Story not found"}
           </h1>
           <button
             onClick={() => navigate("/stories")}
@@ -36,7 +66,7 @@ export default function StoryPage() {
         {/* Header */}
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-2">{story.title}</h1>
-          <p className="text-gray-400">{story.date}</p>
+          <p className="text-gray-400">{story.dateText}</p>
         </div>
 
         {/* Image Gallery */}
@@ -46,7 +76,11 @@ export default function StoryPage() {
             <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="aspect-[16/9]">
                 <img
-                  src={story.images[0]}
+                  src={resolveImageUrl(
+                    story.images[0],
+                    story.imagePublicIds?.[0] || story.cardImagePublicId,
+                    "storyHero",
+                  )}
                   alt="Featured Event"
                   className="w-full h-full object-cover rounded-xl"
                   loading="lazy"
@@ -66,7 +100,11 @@ export default function StoryPage() {
                 >
                   <div className="aspect-[3/4]">
                     <img
-                      src={image}
+                      src={resolveImageUrl(
+                        image,
+                        story.imagePublicIds?.[index + 1],
+                        "storyGallery",
+                      )}
                       alt={`Event ${index + 2}`}
                       className="w-full h-full object-cover rounded-xl"
                       loading="lazy"
@@ -81,7 +119,7 @@ export default function StoryPage() {
 
         {/* Story Description */}
         <div className="space-y-4 text-gray-300">
-          {story.description?.map((para, index) => (
+          {markdownParagraphs.map((para, index) => (
             <p key={index} className="text-lg leading-relaxed">
               {para}
             </p>
@@ -89,30 +127,32 @@ export default function StoryPage() {
         </div>
 
         {/* Project Details (if hackathon) */}
-        {story.project && (
-          <div className="bg-gray-800 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Project: {story.project.name}
-            </h2>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {story.project.techStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 bg-gray-700 rounded-full text-gray-300"
+          {story.project && (
+            <div className="bg-gray-800 rounded-lg p-6">
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Project: {story.project.name}
+              </h2>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {(story.project.techStack || []).map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gray-700 rounded-full text-gray-300"
                 >
                   {tech}
                 </span>
               ))}
             </div>
             <p className="text-gray-300">{story.project.description}</p>
-            <a
-              href={story.project.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center text-blue-400 hover:underline mt-4"
-            >
-              <FaGithub className="mr-2 text-2xl" /> View on GitHub
-            </a>
+            {story.project.github && (
+              <a
+                href={story.project.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center text-blue-400 hover:underline mt-4"
+              >
+                <FaGithub className="mr-2 text-2xl" /> View on GitHub
+              </a>
+            )}
           </div>
         )}
 
@@ -139,7 +179,7 @@ export default function StoryPage() {
               Team : {story.team.name}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {story.team.members.map((member, index) => (
+              {(story.team.members || []).map((member, index) => (
                 <div
                   key={index}
                   className="bg-gray-800 rounded-lg p-4 flex items-center justify-between"

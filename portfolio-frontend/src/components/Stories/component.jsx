@@ -1,21 +1,23 @@
-import { React, useState } from "react";
-import storiesData from "./data.json";
-import StoryCard from "./StoryCard";
+import { React, useMemo, useState } from "react";
 import { ThreeDCard } from "./ThreeDCard";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import SectionWrapper from "../SectionWrapper";
 import { FaArrowDown, FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
+import { resolveImageUrl } from "../../lib/cloudinary";
 
-export default function StoriesComponent() {
+export default function StoriesComponent({ stories = [], isLoading, error }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [storiesToShow, setstoriesToShow] = useState(2);
   const [viewAll, setViewAll] = useState(true);
 
+  const sortedStories = useMemo(() => {
+    return [...stories].sort((a, b) => (a.orderIndex ?? 0) - (b.orderIndex ?? 0));
+  }, [stories]);
+
   const handleNext = () => {
-    if (currentIndex + storiesToShow < storiesData.stories.length) {
+    if (currentIndex + storiesToShow < sortedStories.length) {
       setCurrentIndex(currentIndex + storiesToShow);
-      console.log(currentIndex);
     }
   };
 
@@ -36,6 +38,19 @@ export default function StoriesComponent() {
           },
         ]}
       />
+
+      {error && (
+        <div className="text-center text-red-300 mt-4">{error}</div>
+      )}
+
+      {isLoading && (
+        <div className="text-center text-gray-300 mt-4">Loading stories...</div>
+      )}
+
+      {!isLoading && sortedStories.length === 0 && !error && (
+        <div className="text-center text-gray-300 mt-4">No stories published yet.</div>
+      )}
+
       <button
         onClick={handlePrev}
         className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-16 hidden lg:block"
@@ -43,16 +58,20 @@ export default function StoriesComponent() {
         <FaArrowLeft />
       </button>
       <div className=" flex flex-col lg:flex-row lg:gap-20 justify-center mx-auto">
-        {storiesData.stories
+        {sortedStories
           .slice(currentIndex, currentIndex + storiesToShow)
           .map((story, index) => {
             return (
               <ThreeDCard
-                id={story.id}
-                key={story.id}
+                slug={story.slug}
+                key={story.slug || index}
                 title={story.title}
-                date={story.date}
-                image={story.cardImage}
+                date={story.dateText}
+                image={resolveImageUrl(
+                  story.cardImageUrl,
+                  story.cardImagePublicId,
+                  "storyCard",
+                )}
                 status={story.status}
                 location={story.location}
               />
@@ -61,11 +80,11 @@ export default function StoriesComponent() {
 
         <button
           className={`bg-gray-900 text-white p-2 px-4 rounded-full mx-auto lg:hidden ${
-            viewAll ? "" : "hidden"
+            viewAll && sortedStories.length > storiesToShow ? "" : "hidden"
           }`}
           onClick={() => {
             setCurrentIndex(0);
-            setstoriesToShow(storiesData.stories.length);
+            setstoriesToShow(sortedStories.length);
             setViewAll(false);
           }}
         >
