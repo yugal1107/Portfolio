@@ -31,10 +31,15 @@ export function HeroSection({ settings }: HeroSectionProps) {
             {settings?.bio || "Architecting intelligent digital ecosystems with a focus on performance, scalability, and agentic AI systems."}
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-gradient-to-r from-primary to-secondary text-on-primary px-8 py-4 rounded-md font-bold font-headline flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-primary/20">
+            <a 
+              href={settings?.resumeUrl || "#"} 
+              target={settings?.resumeUrl ? "_blank" : undefined}
+              rel={settings?.resumeUrl ? "noreferrer" : undefined}
+              className="bg-gradient-to-r from-primary to-secondary text-on-primary px-8 py-4 rounded-md font-bold font-headline flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-primary/20"
+            >
               Download CV
               <Download className="w-5 h-5" />
-            </button>
+            </a>
             <div className="flex gap-4">
               <a href={settings?.githubUrl || "https://github.com/yugal1107"} target="_blank" rel="noreferrer" className="bg-surface-bright border border-outline-variant/20 p-4 rounded-md hover:bg-surface-variant transition-all">
                 <Github className="w-6 h-6" />
