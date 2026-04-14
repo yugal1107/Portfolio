@@ -53,7 +53,7 @@ export default function ContactAdminPage() {
   };
 
   if (isLoading) return <div className="p-8 text-zinc-400">Loading...</div>;
-  if (!isAuthenticated) return <div className="p-8 text-zinc-400">Please <Link href="/admin">login</Link> first.</div>;
+  if (!isAuthenticated) return <div className="p-8 text-zinc-400">Please <Link href="/admin/login">login</Link> first.</div>;
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 p-8">

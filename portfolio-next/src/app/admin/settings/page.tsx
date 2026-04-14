@@ -50,7 +50,7 @@ export default function SettingsAdminPage() {
   };
 
   if (isLoading) return <div className="p-8 text-zinc-400">Loading...</div>;
-  if (!isAuthenticated) return <div className="p-8 text-zinc-400">Please <Link href="/admin">login</Link> first.</div>;
+  if (!isAuthenticated) return <div className="p-8 text-zinc-400">Please <Link href="/admin/login">login</Link> first.</div>;
 
   const fields = [
     { key: "fullName", label: "Full Name", type: "text" },
