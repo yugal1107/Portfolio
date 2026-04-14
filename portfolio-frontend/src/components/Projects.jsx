@@ -1,63 +1,22 @@
-import React, { useState } from "react";
-import TextAnimation from "./TextAnimation";
-import ProjectCard from "./ProjectCard";
+import React, { useMemo, useState } from "react";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import { ProjectThreeDCard } from "./Projects3dcard";
 import SectionWrapper from "./SectionWrapper";
 import { FaArrowDown, FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
+import { resolveImageUrl } from "../lib/cloudinary";
 
-const projects = [
-  {
-    title: "Dynamic Movies Website",
-    description:
-      "Developed a dynamic movies website with Node.js, Express.js, EJS, and an external API, allowing users to explore movie details, view films by cast members, and browse by genre.",
-    link: "https://movies.yugal.tech",
-    photolink: "/movies-website-image.png",
-    githublink: "https://github.com/yugal1107/YMoviez---Movies-Website",
-  },
-  {
-    title: "AI Quiz Generator",
-    description:
-      "An AI-powered quiz generator that creates random MCQs on any topic. Users can select the difficulty level and receive their score instantly after completing the quiz.",
-    link: "https://quizzzify.vercel.app",
-    photolink: "/ai-quiz.png",
-    githublink: "https://github.com/yugal1107/Testyourself--AI-quiz-app",
-  },
-  {
-    title: "Shiksha Mitra",
-    description:
-      "ShikshaMitra is a next-gen educational ecosystem built to bridge the gap between students, teachers, and institutions through technology.",
-    link: "https://shikshamitra-virid.vercel.app/",
-    photolink: "/shiskhamitra_img.png",
-    githublink: "https://github.com/yugal1107/Shiksha-Mitra",
-  },
-  {
-    title: "Data Analysis Using Python",
-    description:
-      "Analyzed data using Python libraries such as Pandas and Matplotlib to gain insights into the data of marks of students and visualize the results.",
-    link: "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
-    photolink: "/project2-front.png",
-    githublink:
-      "https://github.com/yugal1107/Python-Project-Data-Visualization-of-midsem-marks",
-  },
-  // {
-  //   title: "AI Chatbot",
-  //   description:
-  //     "An AI-powered PDF chatbot that allows users to upload a PDF and ask questions about its content, providing instant answers based on the document.",
-  //   link: "https://ai-chatbot-black-one.vercel.app/",
-  //   photolink: "/pdf-chatbot.png",
-  //   githublink: "https://github.com/yugal1107/AI-Chatbot"
-  // }
-];
-
-const Projects = () => {
+const Projects = ({ projects = [], isLoading, error }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [projectsToShow, setprojectsToShow] = useState(2);
   const [viewAll, setViewAll] = useState(true);
 
+  const sortedProjects = useMemo(() => {
+    return [...projects].sort((a, b) => (a.orderIndex ?? 0) - (b.orderIndex ?? 0));
+  }, [projects]);
+
   const handleNext = () => {
-    if (currentIndex + projectsToShow < projects.length) {
+    if (currentIndex + projectsToShow < sortedProjects.length) {
       setCurrentIndex(currentIndex + projectsToShow);
     }
   };
@@ -82,8 +41,19 @@ const Projects = () => {
           },
         ]}
       />
-      {/* Changed text color to a bright blue-green */}
-      {/* <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-7 xl:mt-10"> */}
+
+      {error && (
+        <div className="text-center text-red-300 mt-4">{error}</div>
+      )}
+
+      {isLoading && (
+        <div className="text-center text-gray-300 mt-4">Loading projects...</div>
+      )}
+
+      {!isLoading && sortedProjects.length === 0 && !error && (
+        <div className="text-center text-gray-300 mt-4">No projects published yet.</div>
+      )}
+
       <button
         onClick={handlePrev}
         className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold p-16 hidden lg:block"
@@ -91,27 +61,30 @@ const Projects = () => {
         <FaArrowLeft />
       </button>
       <div className=" flex flex-col lg:flex-row gap-2 lg:gap-20 justify-center mx-auto">
-        {projects
+        {sortedProjects
           .slice(currentIndex, currentIndex + projectsToShow)
           .map((project, index) => (
-            // <ProjectCard project={project} key={index} />
             <ProjectThreeDCard
-              key={index}
+              key={project.slug || index}
               title={project.title}
-              livelink={project.link}
-              cardImage={project.photolink}
+              livelink={project.liveUrl}
+              cardImage={resolveImageUrl(
+                project.imageUrl,
+                project.imagePublicId,
+                "projectCard",
+              )}
               description={project.description}
-              githublink={project.githublink}
+              githublink={project.githubUrl}
             />
           ))}
 
         <button
           className={`bg-gray-900 text-white p-2 px-4 rounded-full mx-auto lg:hidden ${
-            viewAll ? "" : "hidden"
+            viewAll && sortedProjects.length > projectsToShow ? "" : "hidden"
           }`}
           onClick={() => {
             setCurrentIndex(0);
-            setprojectsToShow(projects.length);
+            setprojectsToShow(sortedProjects.length);
             setViewAll(false);
           }}
         >

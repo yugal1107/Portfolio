@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Stories from "./pages/Stories.jsx";
 import TechStack from "./components/myUI/TechStack.jsx";
 import StoryPage from "./components/Stories/StoryPage.jsx";
+import AdminPage from "./pages/Admin.jsx";
 import { Analytics } from "@vercel/analytics/react"
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/stories" element={<Stories />} />
         <Route path="/tech" element={<TechStack />} />
-        <Route path="/story/:id" element={<StoryPage />} />
+        <Route path="/story/:slug" element={<StoryPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Analytics />
     </BrowserRouter>
